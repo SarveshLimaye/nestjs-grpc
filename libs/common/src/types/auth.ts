@@ -72,7 +72,7 @@ export interface UserServiceController {
 
   deleteUser(request: FindUserByIdDto): Promise<Empty> | Observable<Empty> | Empty;
 
-  queryUser(request: PaginationDto): Observable<Users>;
+  queryUser(request: Observable<PaginationDto>): Observable<Users>;
 }
 
 export function UserServiceControllerMethods() {

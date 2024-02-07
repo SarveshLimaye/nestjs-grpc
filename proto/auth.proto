@@ -8,7 +8,7 @@ service UserService{
     rpc FindOneUser(FindUserByIdDto) returns (User) {};
     rpc UpdateUser(UpdateUserDto) returns (User) {};
     rpc DeleteUser(FindUserByIdDto) returns (Empty) {};
-    rpc QueryUser(PaginationDto) returns (stream Users) {};
+    rpc QueryUser(stream PaginationDto) returns (stream Users) {};
 }
 
 message Empty{}
