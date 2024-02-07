@@ -33,7 +33,9 @@ export class UsersService implements OnModuleInit {
 
   update(id: string, updateUserDto: UpdateUserDto) : User {
     const userIndex = this.users.findIndex(user => user.id === id);
-    if(userIndex === -1) {
+    console.log("Userindex is" + userIndex);
+    
+    if(userIndex !== -1) {
       this.users[userIndex] = {
         ...this.users[userIndex],
         ...updateUserDto
@@ -45,7 +47,7 @@ export class UsersService implements OnModuleInit {
 
   remove(id: string) {
     const userIndex = this.users.findIndex((user) => user.id === id);
-    if(userIndex === -1) {
+    if(userIndex !== -1) {
       return this.users.splice(userIndex)[0];
     }
     throw new NotFoundException(`User not found by id ${id}.`);
